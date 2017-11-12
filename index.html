@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<script type="text/javascript">
+			
+		thanks_message ="Thanks for your feedback. It is helpful in understanding how we can make things better"
+			
+		function async_send(response){
+			url_var = window.location.href;
+			current = Date.now();
+			//alert(response);
+			//alert(url_var);
+			//alert(current);
+			//document.getElementById("4").submit();
+			
+			send_var = "response=yes&send_url=" + url_var;
+			alert(send_var);
+			
+			// https://www.w3schools.com/xml/ajax_xmlhttprequest_send.asp
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "write_file.php", true);
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");			
+			xhttp.send(send_var);
+		}
+
+
+		function click_yes() {
+			alert (thanks_message);
+			async_send("Yes");
+		}
+
+		function click_no() {
+			alert (thanks_message);
+			async_send("No");
+		}
+		</script>
+	</head>
+<body>
+
+<p>Was this page helpful?</p>
+<input type= "button" id='1' onclick="click_yes();" value="Yes"/>
+<input type= "button" id='2' onclick="click_no()" value="No"/>
+
+<div id='3' style='display:none'>
+<form id='4' action="/action_page.php">
+<textarea rows="4" cols="50">
+At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+</textarea>
+  <input type="submit" value="Submit">
+</form> 
+</div>
+
+</body>
+</html>
