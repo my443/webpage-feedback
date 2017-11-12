@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		
+	<head>		
 		<script type="text/javascript">
 			
 		thanks_message ="Thanks for your feedback. It is helpful in understanding how we can make things better"
@@ -9,13 +8,8 @@
 		function async_send(response){
 			url_var = window.location.href;
 			current = Date.now();
-			//alert(response);
-			//alert(url_var);
-			//alert(current);
-			//document.getElementById("4").submit();
 			
-			send_var = "response=yes&send_url=" + url_var;
-			alert(send_var);
+			send_var = "response="+response+"&send_url=" + url_var;
 			
 			// https://www.w3schools.com/xml/ajax_xmlhttprequest_send.asp
 			var xhttp = new XMLHttpRequest();
@@ -42,14 +36,7 @@
 <input type= "button" id='1' onclick="click_yes();" value="Yes"/>
 <input type= "button" id='2' onclick="click_no()" value="No"/>
 
-<div id='3' style='display:none'>
-<form id='4' action="/action_page.php">
-<textarea rows="4" cols="50">
-At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
-</textarea>
-  <input type="submit" value="Submit">
-</form> 
-</div>
+
 
 </body>
 </html>

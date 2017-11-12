@@ -4,7 +4,10 @@
 <body>
 	
 <?php
-
+/**
+ * Purpose of this script is to write a file when data is received from a 'is this helpful' button. 
+ * The javascript of this button will share which page is useful, and which page is not.
+*/
 
 function getGUID(){
 	// From http://guid.us/GUID/PHP
@@ -35,9 +38,9 @@ $timestamp = date("Y-m-d-h-i-sa");
 $my_file = 'feedback_forms/'.$timestamp.'-'.$guid;
 $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
 
-$data = $_POST["response"].'\n'.$timestamp.'\n'.$_POST["send_url"];
+$data = "<helpful>".$_POST["response"].'</helpful><timestamp>'.$timestamp.'</timestamp><source_url>'.$_POST["send_url"].'</source_url>';
 fwrite($handle, $data);
-echo ('That file saved');
+//echo ('That file saved');
 ?>
 
 </body>
