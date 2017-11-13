@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<head>		
+		
 <style>
 .yes_button {
     background-color: #4D90FE;
@@ -27,7 +25,7 @@
 }   
 </style>
 	
-		<script type="text/javascript">
+<script type="text/javascript">
 			
 		thanks_message ="Thanks for your feedback. \nIt is helpful in understanding how we can make things better."
 			
@@ -54,27 +52,14 @@
 			alert (thanks_message);
 			async_send("No");
 		}
-		</script>
-	</head>
-<body>
+</script>
 
-<!-- This div is hidden and is here for reference purposes. 
-	 The same output can be found with the embed code below.-->	
-<div style="text-align:center; display:none;">
+	
+<div style="text-align:center">
 <p>Was this page helpful to you today?</p>
 <input type= "button" id='1' class='yes_button' onclick="click_yes();" value="Yes"/>
 <input type= "button" id='2' class='no_button' onclick="click_no()" value="No"/>
 </div>
 
-<!-- This embed code embeds the snippet for the yes/ no request in the 
-	 HTML where-ever it is. This is the preferable route since you can 
-	 update the snippet and it will automatically update the feedback 
-	 mechanism in any page that it is found on.
-	 
-	 snippet.html should be in a higher level directory. It should have 
-	 a static reference so that it can be accessed from any directory in the web-directory.
-	 -->
-<embed width="100%" height="500px" src="snippet.html"/>
 
-</body>
-</html>
+
