@@ -32,14 +32,17 @@ function getGUID(){
 
 // Create the file with a date-stamped and guid-stamped filename.
 $guid = getGUID();  												// This can be changed if in windows.
-//echo $guid;
 $timestamp = date("Y-m-d-h-i-sa");
+$open_xml = '<?xml version="1.0" encoding="UTF-8"?><feedback>';
+$close_xml = '</feedback>';
 
 $my_file = 'feedback_forms/'.$timestamp.'-'.$guid.".feedback";
 $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
 
 $data = "<helpful>".$_POST["response"].'</helpful><timestamp>'.$timestamp.'</timestamp><source_url>'.$_POST["send_url"].'</source_url>';
-fwrite($handle, $data);
+$feedback = $open_xml.$data.$close_xml;
+
+fwrite($handle, $feedback);
 //echo ('That file saved');
 ?>
 
